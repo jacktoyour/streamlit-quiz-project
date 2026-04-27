@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 
-st.set_page_config(page_title="전공 상식 퀴즈 앱")
+st.set_page_config(page_title="자기 소개 퀴즈 앱")
 
 # =========================
 # 학생 정보 / 로그인 정보
@@ -26,29 +26,29 @@ def load_quiz_data():
 
     questions = [
         {
-            "question": "Python에서 리스트를 만드는 기호는?",
-            "choices": ["()", "[]", "{}", "<>"],
-            "answer": "[]"
+            "question": "진형민이 제일 좋아하는 음식은?",
+            "choices": ["치킨", "라면", "부대찌개", "피자"],
+            "answer": "부대찌개"
         },
         {
-            "question": "Streamlit에서 화면에 제목을 출력하는 함수는?",
-            "choices": ["st.title()", "st.print()", "st.header_title()", "st.show()"],
-            "answer": "st.title()"
+            "question": "진형민이 제일 좋아하는 노래는",
+            "choices": ["wonderwall", "she's electric", "creep", "champgne supernova"],
+            "answer": "she's electric"
         },
         {
-            "question": "GitHub에서 프로젝트를 저장하는 공간을 무엇이라고 하는가?",
-            "choices": ["Repository", "Folder", "Cloud", "Commit"],
-            "answer": "Repository"
+            "question": "진형민이 속해있는 과는",
+            "choices": ["정보융합학과", "전자공학과", "소프트웨어융합과", "로봇학과"],
+            "answer": "정보융합학과"
         },
         {
-            "question": "Streamlit에서 버튼을 만드는 함수는?",
-            "choices": ["st.input()", "st.button()", "st.click()", "st.submit()"],
-            "answer": "st.button()"
+            "question": "진형민이 제일 좋아하는색은",
+            "choices": ["초록색", "노랑색", "파란색", "빨간색"],
+            "answer": "빨간색"
         },
         {
-            "question": "Streamlit에서 데이터 캐싱에 사용하는 데코레이터는?",
-            "choices": ["@st.cache_data", "@st.save_data", "@st.memory", "@st.data_save"],
-            "answer": "@st.cache_data"
+            "question": "진형민의 생일은",
+            "choices": ["5월2일", "6월 12일", "9월 26일", "10월 30일"],
+            "answer": "10월 30일"
         }
     ]
 
@@ -71,12 +71,12 @@ if "score" not in st.session_state:
 # =========================
 # 첫 화면
 # =========================
-st.title("전공 상식 퀴즈 앱")
+st.title("진형민 소개 퀴즈 앱")
 
 st.info(f"학번: {STUDENT_ID} / 이름: {STUDENT_NAME}")
 
 st.write("""
-이 앱은 Python과 Streamlit을 활용하여 만든 전공 상식 퀴즈 앱입니다.  
+이 앱은 Python과 Streamlit을 활용하여 만든 형민 소개 퀴즈 앱입니다.  
 로그인 후 퀴즈를 풀고 점수를 확인할 수 있습니다.
 """)
 
@@ -119,7 +119,7 @@ else:
 
     st.divider()
 
-    st.subheader("전공 상식 퀴즈")
+    st.subheader("자기 소개 퀴즈")
 
     quiz_data = load_quiz_data()
 
@@ -164,9 +164,9 @@ else:
 
         if score == total:
             st.balloons()
-            st.success("완벽합니다! 전공 상식이 매우 뛰어납니다.")
+            st.success("완벽합니다! 형민 상식이 매우 뛰어납니다.")
         elif score >= total // 2:
-            st.info("좋습니다! 기본 개념을 잘 알고 있습니다.")
+            st.info("좋습니다! 형민이를 잘 알고 있습니다.")
         else:
-            st.warning("조금 더 복습이 필요합니다.")
+            st.warning("조금 더 친해지려는 노력이 필요합니다.")
 
